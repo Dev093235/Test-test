@@ -5,7 +5,7 @@
     "autoCreateDB": true,
     "notiGroup": true,
     "NOTIFICATION": true,
-    "allowInbox": false,
+    "allowInbox": true,
     "autoClean": true,
     "commandDisabled": [
         "sim.js"
@@ -16,13 +16,13 @@
     "EMAIL": "",
     "PASSWORD": "",
     "OTPKEY": "",
-    "BOTNAME": "Rizzu",
+    "BOTNAME": "Rudra 2.0",
     "PREFIX": "/",
     "ADMINBOT": [
-        "100040426712109"
+        "61550558518720"
     ],
     "NDH": [
-        "100037743553265"
+        "61550558518720"
     ],
     "DATABASE": {
         "sqlite": {
