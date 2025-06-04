@@ -1,9 +1,9 @@
- const fs = require("fs");
+p const fs = require("fs");
 module.exports.config = {
-	name: "Arun",
+	name: "Rudra",
     version: "1.0.1",
 	hasPermssion: 0,
-	credits: "Arun", 
+	credits: "Rudra", 
 	description: "no prefix",
 	commandCategory: "No command marks needed",
 	usages: "...",
