@@ -1,36 +1,28 @@
-name: node.js CI
+name: Deploy to Render
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main # जब भी 'main' ब्रांच पर कोई नया कोड पुश होगा, यह वर्कफ़्लो चलेगा
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+  deploy:
+    runs-on: ubuntu-latest # यह जॉब Ubuntu ऑपरेटिंग सिस्टम पर चलेगी
 
     steps:
-    # Step to check out the repository code
-    - uses: actions/checkout@v2
+    - name: Checkout code # GitHub रिपॉजिटरी से कोड को क्लोन करें
+      uses: actions/checkout@v4
 
-    # Step to set up the specified Node.js version
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    - name: Set up Node.js # Node.js का वातावरण सेट करें
+      uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '20' # Node.js का वर्जन (तुम '18', '20', या '22' चुन सकते हो)
 
-    # Step to install dependencies
-    - name: Install dependencies
+    - name: Install dependencies # package.json में लिस्टेड सभी लाइब्रेरीज़ इंस्टॉल करें
       run: npm install
 
-    # Step to run the bot with the correct port
-    - name: Start the bot
+    - name: Trigger Render Deploy # Render डिप्लॉयमेंट को ट्रिगर करें
       env:
-        PORT: 8080
-      run: npm start
+        # यह Render का सीक्रेट URL है जिसे तुम्हें GitHub Secrets में सेट करना होगा
+        RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }} 
+      run: curl "$RENDER_DEPLOY_HOOK_URL" # Render के डिप्लॉय हुक URL को कॉल करें
