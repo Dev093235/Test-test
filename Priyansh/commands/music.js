@@ -65,7 +65,7 @@ module.exports = {
       // Set request headers
       const headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        'Accept': '*/*',
+        'Accept': '*+*',
         'Accept-Encoding': 'gzip, deflate, br',
         'Referer': 'https://cnvmp3.com/',
         'Cookie': '_ga=GA1.1.1062081074.1735238555; _ga_MF283RRQCW=GS1.1.1735238554.1.1.1735239728.0.0.0',
