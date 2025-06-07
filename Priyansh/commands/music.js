@@ -9,7 +9,7 @@ module.exports = {
     name: "music",
     version: "1.0.1",
     hasPermssion: 0,
-    credits: "AADI SHRIVTASTAV",///don't change my Credit Coz i Edit 
+    credits: "Rudra jaat",///don't change my Credit Coz i Edit 
     description: "Download YouTube song from keyword search and link",
     commandCategory: "Media",
     usages: "[songName] [type]",
